@@ -47,11 +47,11 @@ services:
       mai-db-node-ex01:
         condition: service_healthy
         
-  other_server:
+  visit_server:
      build:
-       context: other_server
+       context: visit_server
        dockerfile: Dockerfile
-     container_name: other_server
+     container_name: visit_server
      environment:
        - SERVICE_HOST=my_service
      ports:
