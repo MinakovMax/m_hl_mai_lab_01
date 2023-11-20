@@ -5,5 +5,5 @@ RUN DEBIAN_FRONTEND=noninteractive TZ=Etc/UTC apt-get -y install mc tzdata git s
 RUN git clone -b poco-1.11.7-release https://github.com/pocoproject/poco.git && cd poco && mkdir cmake-build && cd cmake-build && cmake .. && make && sudo make install && cd .. && cd ..
 RUN git clone https://github.com/MinakovMax/m_hl_mai_lab_01.git
 RUN sudo ldconfig
-RUN cd m_hl_mai_lab_01 && mkdir build && cd build && cmake  .. && make
+RUN cd m_hl_mai_lab_01 && cd build && cmake  .. && make
 ENTRYPOINT [ "m_hl_mai_lab_01/build/VISIT_SERVICE" ]
