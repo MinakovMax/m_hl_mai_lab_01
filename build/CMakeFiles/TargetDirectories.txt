@@ -1,4 +1,4 @@
-/home/minakov86/hl_mai_lab_01/build/CMakeFiles/rebuild_cache.dir
-/home/minakov86/hl_mai_lab_01/build/CMakeFiles/edit_cache.dir
-/home/minakov86/hl_mai_lab_01/build/CMakeFiles/VISIT_SERVICE.dir
-/home/minakov86/hl_mai_lab_01/build/CMakeFiles/hl_mai_lab_01.dir
+/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/rebuild_cache.dir
+/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/edit_cache.dir
+/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/VISIT_SERVICE.dir
+/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/m_hl_mai_lab_01.dir

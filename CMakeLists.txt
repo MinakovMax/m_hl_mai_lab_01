@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.2)
 
 project(hl_server C CXX)
 
-SET (EXAMPLE_BINARY "hl_mai_lab_01")
+SET (EXAMPLE_BINARY "m_hl_mai_lab_01")
 SET (VISIT_SERVICE "VISIT_SERVICE")
 
 find_package(OpenSSL)

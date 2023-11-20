@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/minakov86/hl_mai_lab_01
+CMAKE_SOURCE_DIR = /home/minakov86/m_hl_mai_lab_01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/minakov86/hl_mai_lab_01/build
+CMAKE_BINARY_DIR = /home/minakov86/m_hl_mai_lab_01/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/VISIT_SERVICE.dir/depend.make
@@ -59,68 +59,68 @@ include CMakeFiles/VISIT_SERVICE.dir/flags.make
 
 CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.o: CMakeFiles/VISIT_SERVICE.dir/flags.make
 CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.o: ../visit_main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.o -c /home/minakov86/hl_mai_lab_01/visit_main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.o -c /home/minakov86/m_hl_mai_lab_01/visit_main.cpp
 
 CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/hl_mai_lab_01/visit_main.cpp > CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/m_hl_mai_lab_01/visit_main.cpp > CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.i
 
 CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/hl_mai_lab_01/visit_main.cpp -o CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/m_hl_mai_lab_01/visit_main.cpp -o CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.s
 
 CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.o: CMakeFiles/VISIT_SERVICE.dir/flags.make
 CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.o: ../config/config.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.o -c /home/minakov86/hl_mai_lab_01/config/config.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.o -c /home/minakov86/m_hl_mai_lab_01/config/config.cpp
 
 CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/hl_mai_lab_01/config/config.cpp > CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/m_hl_mai_lab_01/config/config.cpp > CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.i
 
 CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/hl_mai_lab_01/config/config.cpp -o CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/m_hl_mai_lab_01/config/config.cpp -o CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.s
 
 CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.o: CMakeFiles/VISIT_SERVICE.dir/flags.make
 CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.o: ../database/database.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.o -c /home/minakov86/hl_mai_lab_01/database/database.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.o -c /home/minakov86/m_hl_mai_lab_01/database/database.cpp
 
 CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/hl_mai_lab_01/database/database.cpp > CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/m_hl_mai_lab_01/database/database.cpp > CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.i
 
 CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/hl_mai_lab_01/database/database.cpp -o CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/m_hl_mai_lab_01/database/database.cpp -o CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.s
 
 CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.o: CMakeFiles/VISIT_SERVICE.dir/flags.make
 CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.o: ../database/user.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.o -c /home/minakov86/hl_mai_lab_01/database/user.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.o -c /home/minakov86/m_hl_mai_lab_01/database/user.cpp
 
 CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/hl_mai_lab_01/database/user.cpp > CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/m_hl_mai_lab_01/database/user.cpp > CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.i
 
 CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/hl_mai_lab_01/database/user.cpp -o CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/m_hl_mai_lab_01/database/user.cpp -o CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.s
 
 CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.o: CMakeFiles/VISIT_SERVICE.dir/flags.make
 CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.o: ../database/visit.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.o"
-	/usr/bin/g++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.o -c /home/minakov86/hl_mai_lab_01/database/visit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.o -c /home/minakov86/m_hl_mai_lab_01/database/visit.cpp
 
 CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.i"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/hl_mai_lab_01/database/visit.cpp > CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/minakov86/m_hl_mai_lab_01/database/visit.cpp > CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.i
 
 CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.s"
-	/usr/bin/g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/hl_mai_lab_01/database/visit.cpp -o CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/minakov86/m_hl_mai_lab_01/database/visit.cpp -o CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.s
 
 # Object files for target VISIT_SERVICE
 VISIT_SERVICE_OBJECTS = \
@@ -150,7 +150,7 @@ VISIT_SERVICE: /usr/local/lib/libPocoFoundation.so.94
 VISIT_SERVICE: /usr/lib/x86_64-linux-gnu/libssl.so
 VISIT_SERVICE: /usr/lib/x86_64-linux-gnu/libcrypto.so
 VISIT_SERVICE: CMakeFiles/VISIT_SERVICE.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/minakov86/hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable VISIT_SERVICE"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable VISIT_SERVICE"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/VISIT_SERVICE.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -163,6 +163,6 @@ CMakeFiles/VISIT_SERVICE.dir/clean:
 .PHONY : CMakeFiles/VISIT_SERVICE.dir/clean
 
 CMakeFiles/VISIT_SERVICE.dir/depend:
-	cd /home/minakov86/hl_mai_lab_01/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/minakov86/hl_mai_lab_01 /home/minakov86/hl_mai_lab_01 /home/minakov86/hl_mai_lab_01/build /home/minakov86/hl_mai_lab_01/build /home/minakov86/hl_mai_lab_01/build/CMakeFiles/VISIT_SERVICE.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/minakov86/m_hl_mai_lab_01/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/minakov86/m_hl_mai_lab_01 /home/minakov86/m_hl_mai_lab_01 /home/minakov86/m_hl_mai_lab_01/build /home/minakov86/m_hl_mai_lab_01/build /home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/VISIT_SERVICE.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/VISIT_SERVICE.dir/depend
 

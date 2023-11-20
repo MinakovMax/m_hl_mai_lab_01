@@ -4,11 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/minakov86/hl_mai_lab_01/config/config.cpp" "/home/minakov86/hl_mai_lab_01/build/CMakeFiles/other_service.dir/config/config.cpp.o"
-  "/home/minakov86/hl_mai_lab_01/database/database.cpp" "/home/minakov86/hl_mai_lab_01/build/CMakeFiles/other_service.dir/database/database.cpp.o"
-  "/home/minakov86/hl_mai_lab_01/database/user.cpp" "/home/minakov86/hl_mai_lab_01/build/CMakeFiles/other_service.dir/database/user.cpp.o"
-  "/home/minakov86/hl_mai_lab_01/database/visit.cpp" "/home/minakov86/hl_mai_lab_01/build/CMakeFiles/other_service.dir/database/visit.cpp.o"
-  "/home/minakov86/hl_mai_lab_01/other_main.cpp" "/home/minakov86/hl_mai_lab_01/build/CMakeFiles/other_service.dir/other_main.cpp.o"
+  "/home/minakov86/m_hl_mai_lab_01/config/config.cpp" "/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/m_hl_mai_lab_01.dir/config/config.cpp.o"
+  "/home/minakov86/m_hl_mai_lab_01/database/database.cpp" "/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/m_hl_mai_lab_01.dir/database/database.cpp.o"
+  "/home/minakov86/m_hl_mai_lab_01/database/user.cpp" "/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/m_hl_mai_lab_01.dir/database/user.cpp.o"
+  "/home/minakov86/m_hl_mai_lab_01/database/visit.cpp" "/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/m_hl_mai_lab_01.dir/database/visit.cpp.o"
+  "/home/minakov86/m_hl_mai_lab_01/main.cpp" "/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles/m_hl_mai_lab_01.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

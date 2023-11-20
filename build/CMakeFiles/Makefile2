@@ -44,17 +44,17 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/minakov86/hl_mai_lab_01
+CMAKE_SOURCE_DIR = /home/minakov86/m_hl_mai_lab_01
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/minakov86/hl_mai_lab_01/build
+CMAKE_BINARY_DIR = /home/minakov86/m_hl_mai_lab_01/build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
 all: CMakeFiles/VISIT_SERVICE.dir/all
-all: CMakeFiles/hl_mai_lab_01.dir/all
+all: CMakeFiles/m_hl_mai_lab_01.dir/all
 
 .PHONY : all
 
@@ -65,7 +65,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/VISIT_SERVICE.dir/clean
-clean: CMakeFiles/hl_mai_lab_01.dir/clean
+clean: CMakeFiles/m_hl_mai_lab_01.dir/clean
 
 .PHONY : clean
 
@@ -76,14 +76,14 @@ clean: CMakeFiles/hl_mai_lab_01.dir/clean
 CMakeFiles/VISIT_SERVICE.dir/all:
 	$(MAKE) -f CMakeFiles/VISIT_SERVICE.dir/build.make CMakeFiles/VISIT_SERVICE.dir/depend
 	$(MAKE) -f CMakeFiles/VISIT_SERVICE.dir/build.make CMakeFiles/VISIT_SERVICE.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/minakov86/hl_mai_lab_01/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target VISIT_SERVICE"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target VISIT_SERVICE"
 .PHONY : CMakeFiles/VISIT_SERVICE.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/VISIT_SERVICE.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/minakov86/hl_mai_lab_01/build/CMakeFiles 6
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/minakov86/m_hl_mai_lab_01/build/CMakeFiles 6
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/VISIT_SERVICE.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/minakov86/hl_mai_lab_01/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/minakov86/m_hl_mai_lab_01/build/CMakeFiles 0
 .PHONY : CMakeFiles/VISIT_SERVICE.dir/rule
 
 # Convenience name for target.
@@ -97,31 +97,31 @@ CMakeFiles/VISIT_SERVICE.dir/clean:
 .PHONY : CMakeFiles/VISIT_SERVICE.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/hl_mai_lab_01.dir
+# Target rules for target CMakeFiles/m_hl_mai_lab_01.dir
 
 # All Build rule for target.
-CMakeFiles/hl_mai_lab_01.dir/all:
-	$(MAKE) -f CMakeFiles/hl_mai_lab_01.dir/build.make CMakeFiles/hl_mai_lab_01.dir/depend
-	$(MAKE) -f CMakeFiles/hl_mai_lab_01.dir/build.make CMakeFiles/hl_mai_lab_01.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/minakov86/hl_mai_lab_01/build/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target hl_mai_lab_01"
-.PHONY : CMakeFiles/hl_mai_lab_01.dir/all
+CMakeFiles/m_hl_mai_lab_01.dir/all:
+	$(MAKE) -f CMakeFiles/m_hl_mai_lab_01.dir/build.make CMakeFiles/m_hl_mai_lab_01.dir/depend
+	$(MAKE) -f CMakeFiles/m_hl_mai_lab_01.dir/build.make CMakeFiles/m_hl_mai_lab_01.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/minakov86/m_hl_mai_lab_01/build/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target m_hl_mai_lab_01"
+.PHONY : CMakeFiles/m_hl_mai_lab_01.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/hl_mai_lab_01.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/minakov86/hl_mai_lab_01/build/CMakeFiles 6
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/hl_mai_lab_01.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/minakov86/hl_mai_lab_01/build/CMakeFiles 0
-.PHONY : CMakeFiles/hl_mai_lab_01.dir/rule
+CMakeFiles/m_hl_mai_lab_01.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/minakov86/m_hl_mai_lab_01/build/CMakeFiles 6
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/m_hl_mai_lab_01.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/minakov86/m_hl_mai_lab_01/build/CMakeFiles 0
+.PHONY : CMakeFiles/m_hl_mai_lab_01.dir/rule
 
 # Convenience name for target.
-hl_mai_lab_01: CMakeFiles/hl_mai_lab_01.dir/rule
+m_hl_mai_lab_01: CMakeFiles/m_hl_mai_lab_01.dir/rule
 
-.PHONY : hl_mai_lab_01
+.PHONY : m_hl_mai_lab_01
 
 # clean rule for target.
-CMakeFiles/hl_mai_lab_01.dir/clean:
-	$(MAKE) -f CMakeFiles/hl_mai_lab_01.dir/build.make CMakeFiles/hl_mai_lab_01.dir/clean
-.PHONY : CMakeFiles/hl_mai_lab_01.dir/clean
+CMakeFiles/m_hl_mai_lab_01.dir/clean:
+	$(MAKE) -f CMakeFiles/m_hl_mai_lab_01.dir/build.make CMakeFiles/m_hl_mai_lab_01.dir/clean
+.PHONY : CMakeFiles/m_hl_mai_lab_01.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
