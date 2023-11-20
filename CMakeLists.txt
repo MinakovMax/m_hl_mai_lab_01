@@ -3,7 +3,8 @@ cmake_minimum_required(VERSION 3.2)
 project(hl_server C CXX)
 
 SET (EXAMPLE_BINARY "m_hl_mai_lab_01")
-SET (VISIT_SERVICE "VISIT_SERVICE")
+SET (VISIT_SERVICE "visti_service")
+SET (TEMPERATURE_SERVICE "temperature_service")
 
 find_package(OpenSSL)
 find_package(Threads)
@@ -60,6 +61,27 @@ target_link_libraries(${VISIT_SERVICE} PRIVATE
                              "PocoDataMySQL"
                              "mysqlclient"
                              ZLIB::ZLIB)
+
+add_executable(${TEMPERATURE_SERVICE} 
+                             temperature_main.cpp 
+                             config/config.cpp 
+                             database/database.cpp 
+                             database/user.cpp 
+                             database/temperature.cpp)
+
+target_include_directories(${TEMPERATURE_SERVICE} PRIVATE "${CMAKE_BINARY_DIR}")
+target_compile_options(${TEMPERATURE_SERVICE} PRIVATE -Wall -Wextra -pedantic -Werror )
+set_target_properties(${TEMPERATURE_SERVICE} PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(${TEMPERATURE_SERVICE} PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
+
+target_link_libraries(${TEMPERATURE_SERVICE} PRIVATE 
+                          ${CMAKE_THREAD_LIBS_INIT} 
+                          ${Poco_LIBRARIES}
+                          "PocoData"
+                          "PocoDataMySQL"
+                          "mysqlclient"
+                          ZLIB::ZLIB)
+
 
 
 

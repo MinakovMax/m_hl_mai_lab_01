@@ -4,5 +4,5 @@ export DB_LOGIN=stud
 export DB_PASSWORD=stud
 export DB_DATABASE=archdb
 
-./build/m_hl_mai_lab_01
+./build/temperature_service
 

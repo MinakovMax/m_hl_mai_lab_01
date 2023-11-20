@@ -31,9 +31,7 @@ services:
   my_service:
     build:
       context: my_service
-      dockerfile: Dockerfile
-      args: 
-        - "BUILD_NO_CACHE=true"
+      dockerfile: Dockerfile      
     container_name: my_service
     environment:
       - DB_HOST=mai-db-node-ex01
@@ -52,9 +50,7 @@ services:
   visit_server:
      build:
        context: visit_server
-       dockerfile: Dockerfile
-       args: 
-        - "BUILD_NO_CACHE=true"
+       dockerfile: Dockerfile       
      container_name: visit_server
      environment:
        - DB_HOST=mai-db-node-ex01
@@ -62,7 +58,7 @@ services:
        - DB_LOGIN=stud
        - DB_PASSWORD=stud
        - DB_DATABASE=archdb
-       - SERVICE_HOST=visit_server
+       - SERVICE_HOST=my_service
      ports:
        - 8081:8081
      networks:

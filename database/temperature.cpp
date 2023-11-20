@@ -1,6 +1,7 @@
-#include "user.h"
+#include "temperature.h"
 #include "database.h"
 #include "../config/config.h"
+
 
 #include <Poco/Data/MySQL/Connector.h>
 #include <Poco/Data/MySQL/MySQLException.h>
@@ -11,30 +12,24 @@
 
 #include <sstream>
 #include <exception>
-#include <optional>
 
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
 using Poco::Data::Statement;
 
 namespace database
-{
+{ 
 
-    void User::init()
+    void Temperature::init()
     {
         try
         {
 
             Poco::Data::Session session = database::Database::get().create_session();
             Statement create_stmt(session);
-            create_stmt << "CREATE TABLE IF NOT EXISTS `User` (`id` INT NOT NULL AUTO_INCREMENT,"
-                        << "`first_name` VARCHAR(256) NOT NULL,"
-                        << "`last_name` VARCHAR(256) NOT NULL,"
-                        << "`login` VARCHAR(256) NOT NULL,"
-                        << "`password` VARCHAR(256) NOT NULL,"
-                        << "`email` VARCHAR(256) NULL,"
-                        << "`title` VARCHAR(1024) NULL,"
-                        << "PRIMARY KEY (`id`),KEY `fn` (`first_name`),KEY `ln` (`last_name`));",
+            // CREATE TABLE IF NOT EXISTS Temperature (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,user_id INT,datetime DATETIME);
+            create_stmt << "CREATE TABLE IF NOT EXISTS Temperature (id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,"
+                        << "user_id INT,value DECIMAL(6,2),datetime DATETIME);",
                 now;
         }
 
@@ -50,48 +45,43 @@ namespace database
             throw;
         }
     }
-
-    Poco::JSON::Object::Ptr User::toJSON() const
+    
+    Poco::JSON::Object::Ptr Temperature::toJSON() const
     {
         Poco::JSON::Object::Ptr root = new Poco::JSON::Object();
 
         root->set("id", _id);
-        root->set("first_name", _first_name);
-        root->set("last_name", _last_name);
-        root->set("email", _email);
-        root->set("title", _title);
-        root->set("login", _login);
-        root->set("password", _password);
+        root->set("user_id", _user_id);
+        root->set("value", _value);   
+        root->set("datetime", _datetime);  
+           
 
         return root;
     }
 
-    User User::fromJSON(const std::string &str)
+    Temperature Temperature::fromJSON(const std::string &str)
     {
-        User user;
+        Temperature Temperature;
         Poco::JSON::Parser parser;
         Poco::Dynamic::Var result = parser.parse(str);
         Poco::JSON::Object::Ptr object = result.extract<Poco::JSON::Object::Ptr>();
 
-        user.id() = object->getValue<long>("id");
-        user.first_name() = object->getValue<std::string>("first_name");
-        user.last_name() = object->getValue<std::string>("last_name");
-        user.email() = object->getValue<std::string>("email");
-        user.title() = object->getValue<std::string>("title");
-        user.login() = object->getValue<std::string>("login");
-        user.password() = object->getValue<std::string>("password");
+        Temperature.id() = object->getValue<long>("id");
+        Temperature.user_id() = object->getValue<long>("user_id");
+        Temperature.value() = object->getValue<float>("value");        
+        Temperature.datetime() = object->getValue<std::string>("datetime");
 
-        return user;
+        return Temperature;
     }
-
-    std::optional<long> User::auth(std::string &login, std::string &password)
+    /*
+    std::optional<long> Temperature::auth(std::string &login, std::string &password)
     {
         try
         {
             Poco::Data::Session session = database::Database::get().create_session();
             Poco::Data::Statement select(session);
             long id;
-            select << "SELECT id FROM User where login=? and password=?",
+            select << "SELECT id FROM Temperature where login=? and password=?",
                 into(id),
                 use(login),
                 use(password),
@@ -113,28 +103,58 @@ namespace database
         }
         return {};
     }
-    std::optional<User> User::read_by_id(long id)
+    */
+    
+    std::vector<Temperature> Temperature::get_temperatures(std::string start_date, std::string end_date)
     {
+        std::cout << "___1" << std::endl;
         try
         {
             Poco::Data::Session session = database::Database::get().create_session();
-            Poco::Data::Statement select(session);
-            User a;
-            select << "SELECT id, first_name, last_name, email, title,login,password FROM User where id=?",
-                into(a._id),
-                into(a._first_name),
-                into(a._last_name),
-                into(a._email),
-                into(a._title),
-                into(a._login),
-                into(a._password),
-                use(id),
-                range(0, 1); //  iterate over result set one row at a time
+            Statement select(session);
+            std::vector<Temperature> result;
+            
+                 
 
+            std::cout << "___2 " << session.isConnected() << std::endl;
+            
+            select << "SELECT id, user_id, value, datetime FROM Temperature WHERE datetime >= ? AND datetime <= ?;",
+            use(start_date), 
+            use(end_date)
+            ;   
+
+            std::cout << "___3 " << select.subTotalRowCount() << std::endl; 
+            //std::cout << "___4 " << select.execute() << std::endl;
+            
+            // create a RecordSet
             select.execute();
             Poco::Data::RecordSet rs(select);
-            if (rs.moveFirst()) return a;
+            std::size_t cols = rs.columnCount();
+            // print all column names
+            for (std::size_t col = 0; col < cols; ++col)
+            {
+                std::cout << rs.columnName(col) << std::endl;
+            }
+            // iterate over all rows and columns
+            bool more = rs.moveFirst();
+            while (more)
+            {
+                Temperature t;
+                for (std::size_t col = 0; col < cols; ++col)
+                {
+                    if(col == 0) t.id() = rs[col].convert<long>();
+                    if(col == 1) t.user_id() = rs[col].convert<long>();
+                    if(col == 2) t.value() = rs[col].convert<float>();
+                    if(col == 3) t.datetime() = rs[col].convert<std::string>();
+                }
+                std::cout << std::endl;
+                more = rs.moveNext();
+                result.push_back(t);
+            }
+           
+            return result;    
         }
+        
 
         catch (Poco::Data::MySQL::ConnectionException &e)
         {
@@ -148,16 +168,16 @@ namespace database
         }
         return {};
     }
-
-    std::vector<User> User::read_all()
+/*
+    std::vector<Temperature> Temperature::read_all()
     {
         try
         {
             Poco::Data::Session session = database::Database::get().create_session();
             Statement select(session);
-            std::vector<User> result;
-            User a;
-            select << "SELECT id, first_name, last_name, email, title, login, password FROM User",
+            std::vector<Temperature> result;
+            Temperature a;
+            select << "SELECT id, first_name, last_name, email, title, login, password FROM Temperature",
                 into(a._id),
                 into(a._first_name),
                 into(a._last_name),
@@ -187,18 +207,20 @@ namespace database
             throw;
         }
     }
+*/
 
-    std::vector<User> User::search(std::string first_name, std::string last_name)
+/*
+    std::vector<Temperature> Temperature::search(std::string first_name, std::string last_name)
     {
         try
         {
             Poco::Data::Session session = database::Database::get().create_session();
             Statement select(session);
-            std::vector<User> result;
-            User a;
+            std::vector<Temperature> result;
+            Temperature a;
             first_name += "%";
             last_name += "%";
-            select << "SELECT id, first_name, last_name, email, title, login, password FROM User where first_name LIKE ? and last_name LIKE ?",
+            select << "SELECT id, first_name, last_name, email, title, login, password FROM Temperature where first_name LIKE ? and last_name LIKE ?",
                 into(a._id),
                 into(a._first_name),
                 into(a._last_name),
@@ -210,14 +232,10 @@ namespace database
                 use(last_name),
                 range(0, 1); //  iterate over result set one row at a time
 
-            
-
             while (!select.done())
             {
-                if (select.execute()) {
-                    std::cout << "___3" << a.first_name() << std::endl;
+                if (select.execute())
                     result.push_back(a);
-                    }
             }
             return result;
         }
@@ -234,17 +252,17 @@ namespace database
             throw;
         }
     }
-
-    std::vector<User> User::search_login(std::string login)
+*//*
+    std::vector<Temperature> Temperature::search_login(std::string login)
     {
         try
         {
             Poco::Data::Session session = database::Database::get().create_session();
             Statement select(session);
-            std::vector<User> result;
-            User a;
+            std::vector<Temperature> result;
+            Temperature a;
             login += "%";            
-            select << "SELECT id, first_name, last_name, email, title, login, password FROM User where login LIKE ?",
+            select << "SELECT id, first_name, last_name, email, title, login, password FROM Temperature where login LIKE ?",
                 into(a._id),
                 into(a._first_name),
                 into(a._last_name),
@@ -275,8 +293,8 @@ namespace database
             throw;
         }
     }
-
-    void User::save_to_mysql()
+*/
+    void Temperature::save_to_mysql()
     {
 
         try
@@ -284,13 +302,10 @@ namespace database
             Poco::Data::Session session = database::Database::get().create_session();
             Poco::Data::Statement insert(session);
 
-            insert << "INSERT INTO User (first_name,last_name,email,title,login,password) VALUES(?, ?, ?, ?, ?, ?)",
-                use(_first_name),
-                use(_last_name),
-                use(_email),
-                use(_title),
-                use(_login),
-                use(_password);
+            insert << "INSERT INTO Temperature (user_id,datetime,value) VALUES(?, ?, ?)",
+                use(_user_id),
+                use(_datetime),
+                use(_value);
 
             insert.execute();
 
@@ -318,73 +333,43 @@ namespace database
         }
     }
 
-    const std::string &User::get_login() const
-    {
-        return _login;
-    }
-
-    const std::string &User::get_password() const
-    {
-        return _password;
-    }
-
-    std::string &User::login()
-    {
-        return _login;
-    }
-
-    std::string &User::password()
-    {
-        return _password;
-    }
-
-    long User::get_id() const
+    long Temperature::get_id() const
     {
         return _id;
     }
 
-    const std::string &User::get_first_name() const
+    long Temperature::get_user_id() const
     {
-        return _first_name;
+        return _user_id;
     }
 
-    const std::string &User::get_last_name() const
+    float Temperature::get_value() const
     {
-        return _last_name;
+        return _value;
     }
 
-    const std::string &User::get_email() const
-    {
-        return _email;
-    }
-
-    const std::string &User::get_title() const
-    {
-        return _title;
-    }
-
-    long &User::id()
+    long &Temperature::id()
     {
         return _id;
     }
 
-    std::string &User::first_name()
+    long &Temperature::user_id()
     {
-        return _first_name;
+        return _user_id;
     }
 
-    std::string &User::last_name()
+    float &Temperature::value()
     {
-        return _last_name;
+        return _value;
     }
 
-    std::string &User::email()
+    const std::string &Temperature::get_datetime() const
     {
-        return _email;
+        return _datetime;
     }
 
-    std::string &User::title()
+    std::string &Temperature::datetime()
     {
-        return _title;
+        return _datetime;
     }
 }

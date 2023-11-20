@@ -1,3 +1,7 @@
+
+
+POST http://localhost:8081/visit?user_id=5
+
 POST http://localhost:8080/user/?first_name=John&last_name=Doe2&email=john.doe@example.com&title=Software_Engineer&login=johndoe&password=password123
 
 

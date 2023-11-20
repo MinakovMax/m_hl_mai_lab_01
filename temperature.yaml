@@ -1,0 +1,152 @@
+openapi: '3.0.0'
+info:
+  version: '1.0.0'
+  title: 'Arch Lab Example API'
+  description: Пример API для первого домашнего задания по курсу Архитектура программных систем
+servers:
+  - url: http://localhost:8082
+    description: Other server
+paths:
+  /temperature:   
+    post:
+      summary: Измерение темпиратуры
+      parameters:
+      - name: user_id
+        description: Идентификатор пользователя
+        in: query
+        required: true
+        schema:
+          type: integer
+      - name: value
+        description: Значение темпиратуры
+        in: query
+        required: true
+        schema: 
+         type: number
+      
+      responses:
+        '200':
+          description: Идентификатор, добавленного пользователя
+          content:
+            application/json:
+              schema:
+                type: integer
+        404:
+          description: Ошибка добавления пользователя
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Неожиданная ошибка
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'                
+  /get_temperatures:
+      get: 
+        summary: Отдает информацию об измерениях темпиратуры
+        parameters:
+          - name: start_datetime
+            description: начальная дата выбранного диапазона в формате 2023-11-20 20:55:39
+            in: query
+            required: true            
+            schema:
+              type: string
+          - name: end_datetime
+            description: конечная дата выбранного диапазона в формате 2023-11-20 20:55:39
+            in: query
+            required: true            
+            schema:
+              type: string
+        responses:
+          '200':
+            description: Список данных о визитах пользователей
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/temperature'
+          404:
+            description: Пользователь не найден
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+          500:
+            description: Неожиданная ошибка
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/Error'
+  
+  /message:
+    get:
+      summary: Какой-то интерфейс
+      parameters:
+      - name: params
+        description: какой-то параметр
+        in: query
+        required: true
+        schema:
+          type: string
+     
+      responses:
+        '200':
+          description: User ID
+          content:
+            application/json:
+              schema:
+               type: string
+        401:
+          description: Not authentication
+          content:
+            application/json:
+              schema:
+                type: string
+ 
+components:
+  schemas:
+    temperatuers: 
+      description: Список данных о визитах полозователей.
+      type: array 
+      items:
+        $ref: '#/components/schemas/temperature'
+
+    temperature_id:
+      description: Уникальный идентификатор визита
+      type: integer
+
+    temperature:
+      description: Информация о конкретном визите.
+      type: object
+      required:
+        - id
+        - user_id
+        - value
+        - datetime
+      properties:
+        id:
+          $ref: '#/components/schemas/temperature_id'
+        user_id:
+          type: string
+        value:
+          type: string
+        datetime:
+          type: string        
+    Error:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          description: Сообщение о ошибке
+          type: string
+
+  securitySchemes:
+      basicAuth:     
+        type: http
+        scheme: basic
+security:
+  - basicAuth: []
+ 
+

@@ -6,4 +6,4 @@ RUN git clone -b poco-1.11.7-release https://github.com/pocoproject/poco.git && 
 RUN git clone https://github.com/MinakovMax/m_hl_mai_lab_01.git
 RUN sudo ldconfig
 RUN cd m_hl_mai_lab_01 && mkdir build && cd build && cmake  .. && make
-ENTRYPOINT [ "m_hl_mai_lab_01/build/m_hl_mai_lab_01"]
+ENTRYPOINT [ "m_hl_mai_lab_01/build/VISIT_SERVICE"]
