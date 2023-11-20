@@ -1,0 +1,52 @@
+[
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/VISIT_SERVICE.dir/visit_main.cpp.o -c /home/minakov86/hl_mai_lab_01/visit_main.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/visit_main.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/VISIT_SERVICE.dir/config/config.cpp.o -c /home/minakov86/hl_mai_lab_01/config/config.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/config/config.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/VISIT_SERVICE.dir/database/database.cpp.o -c /home/minakov86/hl_mai_lab_01/database/database.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/database/database.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/VISIT_SERVICE.dir/database/user.cpp.o -c /home/minakov86/hl_mai_lab_01/database/user.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/database/user.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/VISIT_SERVICE.dir/database/visit.cpp.o -c /home/minakov86/hl_mai_lab_01/database/visit.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/database/visit.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/hl_mai_lab_01.dir/main.cpp.o -c /home/minakov86/hl_mai_lab_01/main.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/main.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/hl_mai_lab_01.dir/config/config.cpp.o -c /home/minakov86/hl_mai_lab_01/config/config.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/config/config.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/hl_mai_lab_01.dir/database/database.cpp.o -c /home/minakov86/hl_mai_lab_01/database/database.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/database/database.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/hl_mai_lab_01.dir/database/user.cpp.o -c /home/minakov86/hl_mai_lab_01/database/user.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/database/user.cpp"
+},
+{
+  "directory": "/home/minakov86/hl_mai_lab_01/build",
+  "command": "/usr/bin/g++  -DPOCO_ENABLE_CPP11 -DPOCO_ENABLE_CPP14 -DPOCO_HAVE_FD_EPOLL -DPOCO_OS_FAMILY_UNIX -DXML_DTD -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE -D_REENTRANT -D_THREAD_SAFE -D_XOPEN_SOURCE=500 -I/usr/include/mysql -I/usr/local/include/mysql -I/home/minakov86/hl_mai_lab_01/build  -O3 -DNDEBUG   -Wall -Wextra -pedantic -Werror -std=gnu++17 -o CMakeFiles/hl_mai_lab_01.dir/database/visit.cpp.o -c /home/minakov86/hl_mai_lab_01/database/visit.cpp",
+  "file": "/home/minakov86/hl_mai_lab_01/database/visit.cpp"
+}
+]
