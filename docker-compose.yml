@@ -1,6 +1,7 @@
 version: '2.1'
 
 services:
+
   mai-db-node-ex01:
     build:
       context: mariadb
