@@ -64,6 +64,24 @@ services:
      networks:
        - arch-network
 
+  temperature_server:
+    build:
+        context: temperature_server
+        dockerfile: Dockerfile       
+    container_name: temperature_server
+    environment:
+            - DB_HOST=mai-db-node-ex01
+            - DB_PORT=3306
+            - DB_LOGIN=stud
+            - DB_PASSWORD=stud
+            - DB_DATABASE=archdb
+            - SERVICE_HOST=my_service
+    ports:
+            - 8082:8082
+    networks:
+            - arch-network
+
+          
 volumes:
   db-node-ex01-data:
 
