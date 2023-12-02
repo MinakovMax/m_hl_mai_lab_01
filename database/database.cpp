@@ -24,6 +24,34 @@ namespace database{
         return _instance;
     }
 
+    size_t Database::get_max_shard(){
+        return 3;
+    }
+
+    std::vector<std::string> Database::get_all_hints(){
+        std::vector<std::string> result;
+        for(size_t i=0;i<get_max_shard();++i){
+            std::string shard_name = "-- sharding:";
+            shard_name += std::to_string(i);
+            result.push_back(shard_name);
+        }
+        return result;
+    }
+
+    std::string Database::sharding_user([[maybe_unused]] long id){
+        std::string result = "-- sharding:";
+
+        std::string key = std::to_string(id);
+
+        size_t shard_number = std::hash<std::string>{}(key)%get_max_shard();
+
+        std::cout << "shard_num: " << shard_number << std::endl;
+        
+        result += std::to_string(shard_number);
+        
+        return result;
+    }
+
     Poco::Data::Session Database::create_session(){
         return Poco::Data::Session(_pool->get());
     }
