@@ -35,13 +35,13 @@ mysql_servers =
 (
     {
         address="mai-db-node-ex01"
-        port=3306
+        port=3360
         hostgroup=0
         max_connections=200
     },
     {
         address="db-node-2"
-        port=3306
+        port=3361
         hostgroup=1
         max_connections=200
     }   
