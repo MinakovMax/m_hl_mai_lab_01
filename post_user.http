@@ -1,7 +1,33 @@
 
+POST http://localhost:8080/user/?first_name=Vasiliy1&last_name=Vasiliev2&email=vasiy@example.com&title=CEO&login=vasiliev&password=sassword123
+
+POST http://localhost:8080/user/?first_name=Sergey1&last_name=Seregin2&email=sergey@example.com&title=COO&login=seregin&password=pdfssword123
+
+POST http://localhost:8080/user/?first_name=John1&last_name=D3oe2&email=john.doe@example.com&title=Software_Engineer&login=johndoe&password=passwo123
+
+POST http://localhost:8080/user/?first_name=Ivan&last_name=Ivanov&email=ivanov@example.com&title=Sales&login=ivanov&password=password1
+
+POST http://localhost:8080/user/?first_name=Ivan&last_name=Ivanov&email=ivanov@example.com&title=Sales&login=ivanov&password=password1
+
+POST http://localhost:8080/user/?first_name=John1&last_name=D3oe2&email=john.doe@example.com&title=Software_Engineer&login=johndoe&password=passwo123
+
+POST http://localhost:8080/user/?first_name=Petr1&last_name=Petrov&email=petrov@example.com&title=CIO&login=petrov&password=passwfdrd123
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 POST http://localhost:8081/visit?user_id=5
 
-POST http://localhost:8080/user/?first_name=John&last_name=Doe2&email=john.doe@example.com&title=Software_Engineer&login=johndoe&password=password123
 
 

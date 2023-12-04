@@ -53,3 +53,7 @@ SELECT datetime, user_id, first_name, last_name, login, password, email, title F
 SELECT id, user_id, datetime FROM Visit
 
 SELECT id, user_id, datetime, value FROM `Temperature` WHERE datetime >= '2023-11-20 22:31:14' AND datetime <= '2023-11-20 22:31:18' 
+
+SELECT COUNT(last_id), MAX(last_id) FROM `Last_user_id`
+
+SELECT MAX(last_id) FROM `Last_user_id`;

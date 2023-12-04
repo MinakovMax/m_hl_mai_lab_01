@@ -212,12 +212,12 @@ public:
 
                 return;
             }
-             // Выполнено. Поиск пользователя по логину
+            // Выполнено. Поиск пользователя по логину
             else if (hasSubstr(request.getURI(), "/search_login") && form.has("login"))
             {
 
                 std::string login = form.get("login");
-               
+
                 auto results = database::User::search_login(login);
                 Poco::JSON::Array arr;
                 for (auto s : results)
@@ -231,7 +231,7 @@ public:
                 return;
             }
             // Выполнено. Создание нового пользователя
-            else if (request.getMethod() == Poco::Net::HTTPRequest::HTTP_POST) 
+            else if (request.getMethod() == Poco::Net::HTTPRequest::HTTP_POST)
             {
                 if (form.has("first_name") && form.has("last_name") && form.has("email") && form.has("title") && form.has("login") && form.has("password"))
                 {
@@ -270,6 +270,7 @@ public:
 
                     if (check_result)
                     {
+                        std::cout << "check_result " << check_result << std::endl;
                         user.save_to_mysql();
                         response.setStatus(Poco::Net::HTTPResponse::HTTP_OK);
                         response.setChunkedTransferEncoding(true);
@@ -280,6 +281,7 @@ public:
                     }
                     else
                     {
+                        std::cout << "check_result " << check_result << std::endl;
                         response.setStatus(Poco::Net::HTTPResponse::HTTP_NOT_FOUND);
                         std::ostream &ostr = response.send();
                         ostr << message;
