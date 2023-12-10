@@ -31,7 +31,7 @@ SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable(${EXAMPLE_BINARY} main.cpp 
                                  config/config.cpp
-                                 redis-cpp/src/redis-cpp/stream.cpp 
+                                 #redis-cpp/src/redis-cpp/stream.cpp 
                                  database/cache.cpp                                 
                                  database/database.cpp
                                  database/user.cpp
@@ -63,7 +63,7 @@ set_target_properties(${EXAMPLE_BINARY} PROPERTIES CXX_STANDARD 17 CXX_STANDARD_
 
 add_executable(${VISIT_SERVICE} visit_main.cpp 
                                 config/config.cpp
-                                redis-cpp/src/redis-cpp/stream.cpp
+                                #redis-cpp/src/redis-cpp/stream.cpp
                                 database/database.cpp
                                 database/cache.cpp 
                                 database/user.cpp                                
@@ -87,7 +87,7 @@ set_target_properties(${VISIT_SERVICE} PROPERTIES CXX_STANDARD 17 CXX_STANDARD_R
 add_executable(${TEMPERATURE_SERVICE} 
                              temperature_main.cpp 
                              config/config.cpp 
-                             redis-cpp/src/redis-cpp/stream.cpp
+                             #redis-cpp/src/redis-cpp/stream.cpp
                              database/cache.cpp
                              database/database.cpp 
                              database/user.cpp 
