@@ -20,49 +20,47 @@
 #include "Poco/Util/HelpFormatter.h"
 #include <iostream>
 
-using Poco::Net::ServerSocket;
+using Poco::DateTimeFormat;
+using Poco::DateTimeFormatter;
+using Poco::ThreadPool;
+using Poco::Timestamp;
 using Poco::Net::HTTPRequestHandler;
 using Poco::Net::HTTPRequestHandlerFactory;
 using Poco::Net::HTTPServer;
+using Poco::Net::HTTPServerParams;
 using Poco::Net::HTTPServerRequest;
 using Poco::Net::HTTPServerResponse;
-using Poco::Net::HTTPServerParams;
-using Poco::Timestamp;
-using Poco::DateTimeFormatter;
-using Poco::DateTimeFormat;
-using Poco::ThreadPool;
-using Poco::Util::ServerApplication;
+using Poco::Net::ServerSocket;
 using Poco::Util::Application;
-using Poco::Util::Option;
-using Poco::Util::OptionSet;
-using Poco::Util::OptionCallback;
 using Poco::Util::HelpFormatter;
+using Poco::Util::Option;
+using Poco::Util::OptionCallback;
+using Poco::Util::OptionSet;
+using Poco::Util::ServerApplication;
 
 #include "handlers/user_handler.h"
 #include "handlers/visit_handler.h"
 
-class HTTPRequestFactory: public HTTPRequestHandlerFactory
+class HTTPRequestFactory : public HTTPRequestHandlerFactory
 {
 public:
-    HTTPRequestFactory(const std::string& format):
-        _format(format)
+    HTTPRequestFactory(const std::string &format) : _format(format)
     {
     }
 
-    HTTPRequestHandler* createRequestHandler(
-        const HTTPServerRequest& request)
+    HTTPRequestHandler *createRequestHandler(
+        const HTTPServerRequest &request)
     {
 
-        std::cout << "request:" << request.getURI()<< std::endl;
-        if (hasSubstr(request.getURI(),"/user") ||
-            hasSubstr(request.getURI(),"/search") ||
-            hasSubstr(request.getURI(),"/search_login") ||
-            hasSubstr(request.getURI(),"/auth")
-            )
-            { return new UserHandler(_format); }
-           
-        
-            
+        // std::cout << "request:" << request.getURI()<< std::endl;
+        if (hasSubstr(request.getURI(), "/user") ||
+            hasSubstr(request.getURI(), "/search") ||
+            hasSubstr(request.getURI(), "/search_login") ||
+            hasSubstr(request.getURI(), "/auth"))
+        {
+            return new UserHandler(_format);
+        }
+
         return 0;
     }
 

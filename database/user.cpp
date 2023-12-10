@@ -1,5 +1,8 @@
 
 #include "user.h"
+#include "../config/config.h"
+#include "database.h"
+#include "cache.h"
 
 #include <Poco/Data/MySQL/Connector.h>
 #include <Poco/Data/MySQL/MySQLException.h>
@@ -12,10 +15,6 @@
 #include <future>
 #include <optional>
 #include <sstream>
-
-#include "../config/config.h"
-#include "database.h"
-#include "../database/cache.h"
 
 using namespace Poco::Data::Keywords;
 using Poco::Data::Session;
@@ -196,22 +195,22 @@ namespace database
             std::string sql = "SELECT id, first_name, last_name, email, "
                               "title,login,password FROM User where id=? " +
                               sharding_hint;
-            std::cout << sql << std::endl;
+            // std::cout << sql << std::endl;
             select << sql, into(a._id), into(a._first_name), into(a._last_name),
                 into(a._email), into(a._title), into(a._login), into(a._password),
                 use(id), range(0, 1); //  iterate over result set one row at a time
 
-            std::cout << "SQL executed:";
+            // std::cout << "SQL executed:";
             select.execute();
             Poco::Data::RecordSet rs(select);
             if (rs.moveFirst())
             {
-                std::cout << " record found" << std::endl;
+                // std::cout << " record found" << std::endl;
                 return a;
             }
             else
             {
-                std::cout << " no record found" << std::endl;
+                // std::cout << " no record found" << std::endl;
             }
         }
 
@@ -405,25 +404,21 @@ namespace database
                 into(last_user_id),
                 now;
 
-            std::cout << "save_to_mysql_1" << select_last_user_id.toString() << std::endl;
-            /*
-            select_last_user_id.execute();
-            Poco::Data::RecordSet rs(select_last_user_id);
+            // std::cout << "save_to_mysql_1" << select_last_user_id.toString() << std::endl;
 
-            std::vector<long> result_lsat_id;
+            Poco::Data::Statement select_last_user_id_node0(session);
+            long last_user_id_node0 = 0;
 
-            bool more = rs.moveFirst();
-            while (more)
-            {
-                long last_id = rs[1].convert<long>();
-                result_lsat_id.push_back(last_id);
-                more = rs.moveNext();
-            }
-            */
+            select_last_user_id_node0 << "SELECT MAX(id) FROM User;-- sharding:0",
+                into(last_user_id_node0),
+                now;
+
+            if (last_user_id_node0 > last_user_id)
+                last_user_id = last_user_id_node0;
 
             last_user_id = last_user_id + 1;
 
-            std::cout << "last_user_id " << last_user_id << std::endl;
+            // std::cout << "last_user_id " << last_user_id << std::endl;
 
             Poco::Data::Statement insert(session);
 
@@ -433,7 +428,7 @@ namespace database
                 use(last_user_id), use(_first_name), use(_last_name), use(_email),
                 use(_title), use(_login), use(_password);
 
-            std::cout << "save_to_mysql_2" << insert.toString() << std::endl;
+            // std::cout << "save_to_mysql_2" << insert.toString() << std::endl;
 
             insert.execute();
 
@@ -452,8 +447,7 @@ namespace database
             insert_last_user_id << "INSERT INTO `Last_user_id` (last_id) VALUES (?);-- sharding:0",
                 use(last_user_id);
 
-            std::cout << "save_to_mysql_2" << insert_last_user_id.toString()
-                      << std::endl;
+            // std::cout << "save_to_mysql_2" << insert_last_user_id.toString() << std::endl;
 
             insert_last_user_id.execute();
         }
