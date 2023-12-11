@@ -132,14 +132,13 @@ public:
             {
                 long id = atol(form.get("id").c_str());
                 bool no_cache = false;
-
                 if (form.has("no_cache"))
                     no_cache = true;
 
                 if (!no_cache)
                 {
 
-                    std::optional<database::User> result = database::User::read_by_id(id);
+                    std::optional<database::User> result = database::User::read_from_cache_by_id(id);
                     if (result)
                     {
                         response.setStatus(Poco::Net::HTTPResponse::HTTP_OK);
