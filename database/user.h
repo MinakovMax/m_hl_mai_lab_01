@@ -21,7 +21,8 @@ namespace database
 
     public:
         static User fromJSON(const std::string &str);
-
+        static void preload(const std::string & str);
+        
         long get_id() const;
         const std::string &get_first_name() const;
         const std::string &get_last_name() const;
@@ -45,7 +46,7 @@ namespace database
         static std::vector<User> search(std::string first_name, std::string last_name);
         static std::vector<User> search_login(std::string login);
         void save_to_mysql();
-
+        void send_to_queue();
         void save_to_cache();
         static std::optional<User> read_from_cache_by_id(long id);
 

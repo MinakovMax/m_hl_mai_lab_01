@@ -8,5 +8,4 @@ export QUEUE_HOST=127.0.0.1:9092
 export QUEUE_TOPIC=event_server
 export QUEUE_GROUP_ID=0
 
-./build/m_hl_mai_lab_01
-
+./build/event_writer

@@ -294,7 +294,8 @@ public:
                     if (check_result)
                     {
                         // std::cout << "check_result " << check_result << std::endl;
-                        user.save_to_mysql();
+                        user.send_to_queue();
+                        //user.save_to_mysql();
                         user.save_to_cache();
                         response.setStatus(Poco::Net::HTTPResponse::HTTP_OK);
                         response.setChunkedTransferEncoding(true);

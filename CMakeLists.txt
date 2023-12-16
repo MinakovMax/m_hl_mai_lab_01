@@ -3,6 +3,7 @@ cmake_minimum_required(VERSION 3.2)
 project(hl_server C CXX)
 
 SET (EXAMPLE_BINARY "m_hl_mai_lab_01")
+SET (WRITER_BINARY  "event_writer")
 SET (VISIT_SERVICE "visit_service")
 SET (TEMPERATURE_SERVICE "temperature_service")
 
@@ -14,6 +15,7 @@ SET (CMAKE_CXX_FLAGS_RELEASE "-O3 -g0 -std=${STD_CXX} -Wall -DNDEBUG ${REDISCPP_
 find_package(OpenSSL)
 find_package(Threads)
 find_package(ZLIB)
+find_package(CppKafka REQUIRED)
 find_package(Poco REQUIRED COMPONENTS Foundation Util Net XML JSON Crypto NetSSL)
 
 
@@ -37,9 +39,19 @@ add_executable(${EXAMPLE_BINARY} main.cpp
                                  database/user.cpp
                                  database/visit.cpp)
 
+add_executable(${WRITER_BINARY} writer_main.cpp 
+                                 config/config.cpp 
+                                 database/cache.cpp
+                                 database/database.cpp
+                                 database/user.cpp
+                                 database/visit.cpp)
+
+
 add_executable(load_data load_data.cpp)
 
 target_include_directories(${EXAMPLE_BINARY} PRIVATE "${CMAKE_BINARY_DIR}")
+target_include_directories(${WRITER_BINARY} PRIVATE "${CMAKE_BINARY_DIR}")
+
 target_compile_options(${EXAMPLE_BINARY} PRIVATE -Wall -Wextra -pedantic -Werror )
 
 
@@ -49,6 +61,18 @@ target_link_libraries(${EXAMPLE_BINARY} PRIVATE
                              "PocoData"
                              "PocoDataMySQL"
                              "mysqlclient"
+                             "rdkafka++"
+                             CppKafka::cppkafka 
+                             ZLIB::ZLIB)
+
+
+target_link_libraries(${WRITER_BINARY} PRIVATE 
+                             ${CMAKE_THREAD_LIBS_INIT} 
+                             ${Poco_LIBRARIES}
+                             "PocoData"
+                             "PocoDataMySQL"
+                             "rdkafka++"
+                             CppKafka::cppkafka
                              ZLIB::ZLIB)
 
 target_link_libraries(load_data PRIVATE 
@@ -60,6 +84,9 @@ target_link_libraries(load_data PRIVATE
 
 set_target_properties(${EXAMPLE_BINARY} PROPERTIES LINKER_LANGUAGE CXX)
 set_target_properties(${EXAMPLE_BINARY} PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
+
+set_target_properties(${WRITER_BINARY} PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(${WRITER_BINARY} PROPERTIES CXX_STANDARD 17 CXX_STANDARD_REQUIRED ON)
 
 add_executable(${VISIT_SERVICE} visit_main.cpp 
                                 config/config.cpp
@@ -79,6 +106,8 @@ target_link_libraries(${VISIT_SERVICE} PRIVATE
                              "PocoData"
                              "PocoDataMySQL"
                              "mysqlclient"
+                             "rdkafka++"
+                             CppKafka::cppkafka 
                              ZLIB::ZLIB)
 
 set_target_properties(${VISIT_SERVICE} PROPERTIES LINKER_LANGUAGE CXX)
@@ -103,6 +132,8 @@ target_link_libraries(${TEMPERATURE_SERVICE} PRIVATE
                           "PocoData"
                           "PocoDataMySQL"
                           "mysqlclient"
+                          "rdkafka++"
+                          CppKafka::cppkafka 
                           ZLIB::ZLIB)
 
 
