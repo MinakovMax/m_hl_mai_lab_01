@@ -10,5 +10,5 @@ RUN git clone https://github.com/edenhill/librdkafka.git && cd librdkafka && ./c
 RUN git clone https://github.com/mfontanini/cppkafka && cd cppkafka && mkdir build && cd build && cmake .. && make && sudo make install && cd .. && cd .. 
 RUN git clone https://github.com/MinakovMax/m_hl_mai_lab_01.git
 RUN sudo ldconfig
-RUN cd hl_mai_lab_04 && mkdir build && cd build && cmake  .. && make
+RUN cd m_hl_mai_lab_01 && mkdir build && cd build && cmake  .. && make
 ENTRYPOINT [ "m_hl_mai_lab_01/build/event_writer" ]
