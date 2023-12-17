@@ -1,12 +1,17 @@
 
 POST http://localhost:8080/user/?first_name=Vasiliy1&last_name=Vasiliev2&email=vasiy@example.com&title=CEO&login=vasiliev&password=sassword123
 
+POST http://localhost:8080/user/?first_name=Stepan&last_name=Petrov&email=s@example.com&title=CIO&login=spetrov&password=passwfdffdrd123
+
+
 POST http://localhost:8080/user/?first_name=Ivan&last_name=Ivanov&email=ivanov@example.com&title=Sales&login=ivanov&password=password1
 
 
-POST http://localhost:8080/user/?first_name=Stepan&last_name=Petrov&email=s@example.com&title=CIO&login=spetrov&password=passwfdffdrd123
-
 POST http://localhost:8080/user/?first_name=Vasiliy1&last_name=Vasiliev2&email=vasiy@example.com&title=CEO&login=vasiliev&password=sassword123
+
+
+
+
 
 POST http://localhost:8080/user/?first_name=Sergey1&last_name=Seregin2&email=sergey@example.com&title=COO&login=seregin&password=pdfssword123
 
